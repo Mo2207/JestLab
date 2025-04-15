@@ -3,10 +3,11 @@ import { exec } from 'child_process';
 import chalk from 'chalk';
 
 export async function runTest(filePath: string, testName?: string): Promise<string> {
+  
   const test = testName
     ? `jest ${filePath} -t="${testName}" --verbose`
     : `jest ${filePath} --verbose`;
-    
+
   return new Promise<string>((resolve, reject) => {
     exec(test, (error, stdout, stderr) => {
 

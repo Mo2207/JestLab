@@ -9,6 +9,11 @@ type ButtonProps = {
 
 export default function Button({ label, onClick, disabled }: ButtonProps) {
   return (
-    <button onClick={onClick} disabled={disabled}>{label}</button>
+    <button
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {label}
+    </button>
   );
 }

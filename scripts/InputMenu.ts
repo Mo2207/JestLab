@@ -3,7 +3,7 @@ import inquirer from 'inquirer';
 import { mainMenu } from './mainMenu';
 import { runTest } from './runTest';
 
-export async function buttonMenu() {
+export async function inputMenu() {
   let keepGoing = true;
 
   while (keepGoing) {
@@ -12,12 +12,13 @@ export async function buttonMenu() {
         {
           type: 'list',
           name: 'choice',
-          message: '🔘 Button Tests',
+          message: '⌨️ Input Tests',
           choices: [
-            { name: 'Run all button tests', value: 'all' },
+            { name: 'Run all input tests', value: 'all' },
             { name: 'Run render test', value: 'Render test' },
-            { name: 'Run click test', value: 'Click test' },
+            { name: 'Run change test', value: 'Change test' },
             { name: 'Run disabled test', value: 'Disabled test' },
+            { name: 'Run placeholder test', value: 'Placeholder test' },
             { name: '⬅️ Go back', value: 'back' },
             { name: '❌ Exit', value: 'exit' }
           ]
@@ -35,24 +36,30 @@ export async function buttonMenu() {
       return await mainMenu();
     }
 
-    // RUN ALL BUTTON TESTS
+    // RUN ALL INPUT TESTS
     if (choice === 'all') {
-      await runTest('_tests_/Button.test.tsx');
+      await runTest('_tests_/Input.test.tsx');
     }
 
     // RUN RENDER TEST
     if (choice === 'Render test') {
-      await runTest('_tests_/Button.test.tsx -t="Render test"');
+      await runTest('_tests_/Input.test.tsx -t="Render test"');
     }
 
-    // RUN CLICK TEST
-    if (choice === 'Click test') {
-      await runTest('_tests_/Button.test.tsx -t="Click test"');
+    // RUN CHANGE TEST
+    if (choice === 'Change test') {
+      await runTest('_tests_/Input.test.tsx -t="Change test"');
     }
 
-    // DISABLED TEST
+    // RUN DISABLED TEST
     if (choice === 'Disabled test') {
-      await runTest('_tests_/Button.test.tsx -t="Disabled test"');
+      await runTest('_tests_/Input.test.tsx -t="Disabled test"');
     }
+
+    // RUN PLACEHOLDER TEST
+    if (choice === 'Placeholder test') {
+      await runTest('_tests_/Input.test.tsx -t="Placeholder test"');
+    }
+
   }
 }
