@@ -1,0 +1,13 @@
+
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "jsx": "react-jsx",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src", "_tests_"],
+}
