@@ -21,8 +21,7 @@ It provides an interactive CLI that allows you to run tests on individual compon
 - ✅ Run all tests or individual test cases interactively
 - 📋 Inquirer-powered menus for clean test selection
 - 🎯 Filtered output: only show the most useful summary of test results
-<!-- - 🧼 Handles failures gracefully — no crashing on errors -->
-<!-- - ✨ Supports intentional failing tests for learning or demonstration -->
+- ✨ Supports intentional failing tests for learning or demonstration
 
 ---
 
@@ -30,7 +29,7 @@ It provides an interactive CLI that allows you to run tests on individual compon
 
 - 🔘 `Button` — label rendering, click handler, disabled state
 - ⌨️ `Input` — value rendering, onChange, placeholder, disabled
-<!-- - 💥 `Fail Example` — test purposely designed to fail for demo -->
+- 💥 `Fail Example` — test purposely designed to fail for demo
 
 ---
 
