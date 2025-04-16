@@ -19,6 +19,7 @@ export async function mainMenu() {
             { name: '🧪 Run All Tests', value: 'all' },
             { name: '🔘 Button Tests', value: 'button' },
             { name: '⌨️ Input Tests', value: 'input' },
+            { name: '💥 Run fail test (example)', value: 'fail-example' },
             { name: '❌ Exit', value: 'exit' }
           ]
         }
@@ -32,7 +33,7 @@ export async function mainMenu() {
 
     // RUN ALL TESTS
     if (answers.choice === 'all') {
-      await runTest('_tests_');
+      await runTest('_tests_ --testPathIgnorePatterns=fail');
     }
 
     // GO TO BUTTON MENU
@@ -44,6 +45,12 @@ export async function mainMenu() {
     if (answers.choice === 'input') {
       await inputMenu();
     }
+
+    // FAIL TEST
+    if (answers.choice === 'fail-example') {
+      await runTest('_tests_/fail/ExampleFail.test.tsx');
+    }
+
   }
 }
 
